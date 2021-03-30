@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="secondary">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-capitalize">Materia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="formGroup">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Profesor</ion-label>
+        <ion-input type="text" formControlName="profesor"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Materia</ion-label>
+        <ion-input type="text" formControlName="nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Primer corte</ion-label>
+        <ion-input type="number" formControlName="nota1"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Segundo corte</ion-label>
+        <ion-input type="number" formControlName="nota2"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Tercer corte</ion-label>
+        <ion-input type="number" formControlName="nota3"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-button id="boton" (click)="onSubmit()" [disabled]="formGroup.invalid" color="primary">
+      <ion-icon slot="start" name="add"></ion-icon>
+      Modificar
+    </ion-button>
+
+    <ion-button id="boton" (click)="eliminar()" color="danger">
+      <ion-icon slot="start" name="close-outline"></ion-icon>
+      Eliminar
+    </ion-button>
+  </form>
+</ion-content>

@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-label *ngIf="materiService.materias.length === 0"> No hay materias registradas </ion-label>
+
+  <div *ngIf="materiService.materias.length !== 0">
+    <ion-list>
+      <ion-item (click)="onClick(materia.id)" *ngFor="let materia of materiService.materias" routerLink="/materia">
+        <ion-label>{{ materia.nombre }}</ion-label>
+        <ion-label id="def">{{ materia.definitiva | number:'1.1-2' }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="presentAlertPrompt()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

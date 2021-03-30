@@ -1,5 +1,7 @@
 {
   "name": "practico",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
